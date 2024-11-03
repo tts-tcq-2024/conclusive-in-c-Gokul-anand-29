@@ -52,8 +52,10 @@ void sendToEmail(BreachType breachType) {
   }
 }
 
-void sendAlert(AlertTarget alertTarget, BreachType breachType) {
-    switch (alertTarget) {
+void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
+  BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
+  
+   switch (alertTarget) {
         case TO_CONTROLLER:
             sendToController(breachType);
             break;
@@ -61,8 +63,4 @@ void sendAlert(AlertTarget alertTarget, BreachType breachType) {
             sendToEmail(breachType);
             break;
     }
-}
-void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
-  BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
-  sendAlert(alertTarget, breachType);
  }
