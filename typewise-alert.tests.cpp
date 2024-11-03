@@ -8,7 +8,7 @@ TEST(TypeWiseAlertTestSuite,InfersBreachAccordingToLimits) {
 
 }
 TEST(TypeWiseAlertTestSuite,classifyTemperatureBreachAccordingToType) {
-  assertclassifyTemperatureBreach(PASSIVE_COOLING, 30),NORMAL);
+  assert(classifyTemperatureBreach(PASSIVE_COOLING, 30),NORMAL);
   assert(classifyTemperatureBreach(PASSIVE_COOLING, -5), TOO_LOW);
   assert(classifyTemperatureBreach(PASSIVE_COOLING, 38),TOO_HIGH);
   
