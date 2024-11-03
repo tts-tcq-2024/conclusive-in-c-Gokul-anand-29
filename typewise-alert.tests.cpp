@@ -9,14 +9,14 @@ TEST(TypeWiseAlertTestSuite,InfersBreachAccordingToLimits) {
 }
 TEST(TypeWiseAlertTestSuite,classifyTemperatureBreachAccordingToType) {
   assertclassifyTemperatureBreach(PASSIVE_COOLING, 30),NORMAL);
- /* assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::PASSIVE_COOLING, -5), TypewiseAlert::BreachType::TOO_LOW);
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::PASSIVE_COOLING, 38), TypewiseAlert::BreachType::TOO_HIGH);
+  assert(classifyTemperatureBreach(PASSIVE_COOLING, -5), TOO_LOW);
+  assert(classifyTemperatureBreach(PASSIVE_COOLING, 38),TOO_HIGH);
   
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::HI_ACTIVE_COOLING, 42), TypewiseAlert::BreachType::NORMAL);
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::HI_ACTIVE_COOLING, -5), TypewiseAlert::BreachType::TOO_LOW);
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::HI_ACTIVE_COOLING, 50), TypewiseAlert::BreachType::TOO_HIGH);
+  assert(classifyTemperatureBreach(HI_ACTIVE_COOLING, 42),NORMAL);
+  assert(classifyTemperatureBreach(HI_ACTIVE_COOLING, -5),TOO_LOW);
+  assert(classifyTemperatureBreach(HI_ACTIVE_COOLING, 50), TOO_HIGH);
   
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::MED_ACTIVE_COOLING, 38), TypewiseAlert::BreachType::NORMAL);
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::MED_ACTIVE_COOLING, -5), TypewiseAlert::BreachType::TOO_LOW);
-  assert(TypewiseAlert::classifyTemperatureBreach(TypewiseAlert::CoolingType::MED_ACTIVE_COOLING, 42), TypewiseAlert::BreachType::TOO_HIGH);*/
+  assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 38),NORMAL);
+  assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5), TOO_LOW);
+  assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 42), TOO_HIGH);*/
 }
