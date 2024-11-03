@@ -25,7 +25,6 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
     }
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
     }
-}
 
 void sendToController(BreachType breachType) {
   const unsigned short header = 0xfeed;
