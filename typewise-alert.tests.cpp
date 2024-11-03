@@ -18,5 +18,5 @@ TEST(TypeWiseAlertTestSuite,classifyTemperatureBreachAccordingToType) {
   
   assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 38),NORMAL);
   assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5), TOO_LOW);
-  assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 42), TOO_HIGH);*/
+  assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 42), TOO_HIGH);
 }
