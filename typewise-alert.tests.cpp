@@ -57,3 +57,14 @@ TEST(TypeWiseAlertTestSuite, ClassifiesBreachForMedActiveCoolingHighTemperature)
 TEST(TypeWiseAlertTestSuite, ClassifiesBreachForMedActiveCoolingNormalTemperature) {
     assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 39.0) == NORMAL);
 }
+
+TEST(TypeWiseAlertTestSuite, SendingTheBreachToController) {
+    sendToController(TOO_HIGH);
+    sendToController(NORMAL);
+    sendToController(TOO_LOW);
+}
+TEST(TypeWiseAlertTestSuite, SendingTheBreachToEmail) {
+    sendToEmail(TOO_HIGH);
+    sendToEmail(NORMAL);
+    sendToEmail(TOO_LOW);
+}
