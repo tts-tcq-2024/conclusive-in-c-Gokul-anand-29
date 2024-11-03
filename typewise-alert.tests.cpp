@@ -20,3 +20,7 @@ TEST(TypeWiseAlertTestSuite,classifyTemperatureBreachAccordingToType) {
   assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5), TOO_LOW);
   assert(classifyTemperatureBreach(MED_ACTIVE_COOLING, 42), TOO_HIGH);
 }
+TEST(TypeWiseAlertTestSuite,checkAndAlertAccording to input){
+  assert(checkAndAlert(TO_EMAIL, PASSIVE_COOLING, 30),NORMAL);
+  assert(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, 30),NORMAL);
+}
