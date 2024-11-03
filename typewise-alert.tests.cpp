@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "typewise-alert.h"
+#include <assert.h>
 
 TEST(TypeWiseAlertTestSuite, InfersBreachWhenValueIsBelowLowerLimit) {
     assert(inferBreach(-5.0, 0, 35), TOO_LOW);
