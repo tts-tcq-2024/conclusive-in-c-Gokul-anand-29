@@ -70,7 +70,12 @@ TEST(TypeWiseAlertTestSuite, SendingTheBreachToEmail) {
 }
 
 TEST(TypeWiseAlertTestSuite, checkAndAlert) {
-    checkAndAlert(TO_CONTROLLER,PASSIVE_COOLING,30);
-    checkAndAlert(TO_EMAIL,HI_ACTIVE_COOLING,45);
-    checkAndAlert(TO_CONTROLLER,MED_ACTIVE_COOLING,35);
+    
+    BatteryCharacter batteryCharPassive = {PASSIVE_COOLING, "BrandA"};
+    BatteryCharacter batteryCharActive = {HI_ACTIVE_COOLING, "BrandB"};
+    BatteryCharacter batteryCharMed = {MED_ACTIVE_COOLING, "BrandC"};
+    
+    checkAndAlert(TO_CONTROLLER,batteryCharPassive,30);
+    checkAndAlert(TO_EMAIL,batteryCharActive,45);
+    checkAndAlert(TO_CONTROLLER,batteryCharMed,35);
 }
