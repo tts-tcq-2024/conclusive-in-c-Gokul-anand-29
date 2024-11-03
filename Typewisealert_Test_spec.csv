@@ -1,0 +1,20 @@
+﻿Test Case,Purpose,Input,Expected Outcome,Notes
+InfersBreachWhenValueIsBelowLowerLimit,Verify inferBreach identifies values below the lower limit.,"value = -5.0, lowerLimit = 0, upperLimit = 35",TOO_LOW,Tests lower boundary condition.
+InfersBreachWhenValueIsAboveUpperLimit,Confirm inferBreach identifies values above the upper limit.,"value = 50.0, lowerLimit = 0, upperLimit = 35",TOO_HIGH,Tests upper boundary condition.
+InfersNormalWhenValueIsWithinLimits,Ensure inferBreach returns NORMAL within limits.,"value = 20.0, lowerLimit = 0, upperLimit = 35",NORMAL,Validates normal operating conditions.
+InfersLowerBoundaryAsNormal,Check lower boundary value as normal.,"value = 0.0, lowerLimit = 0, upperLimit = 35",NORMAL,Tests inclusivity of lower limit.
+InfersUpperBoundaryAsNormal,Verify upper boundary value as normal.,"value = 35.0, lowerLimit = 0, upperLimit = 35",NORMAL,Tests inclusivity of upper limit.
+ClassifiesBreachForPassiveCoolingLowTemperature,Test classification for low temperature in passive cooling.,"coolingType = PASSIVE_COOLING, temperatureInC = -1.0",TOO_LOW,Validates low temperature handling.
+ClassifiesBreachForPassiveCoolingHighTemperature,Confirm classification for high temperature in passive cooling.,"coolingType = PASSIVE_COOLING, temperatureInC = 36.0",TOO_HIGH,Validates high temperature handling.
+ClassifiesBreachForPassiveCoolingNormalTemperature,Ensure normal temperature classification for passive cooling.,"coolingType = PASSIVE_COOLING, temperatureInC = 20.0",NORMAL,Checks normal range identification.
+ClassifiesBreachForHiActiveCoolingLowTemperature,Test classification for low temperature in high active cooling.,"coolingType = HI_ACTIVE_COOLING, temperatureInC = -1.0",TOO_LOW,Validates low temperature handling.
+ClassifiesBreachForHiActiveCoolingHighTemperature,Verify classification for high temperature in high active cooling.,"coolingType = HI_ACTIVE_COOLING, temperatureInC = 46.0",TOO_HIGH,Checks upper limit for high cooling.
+ClassifiesBreachForHiActiveCoolingNormalTemperature,Ensure normal classification for high active cooling.,"coolingType = HI_ACTIVE_COOLING, temperatureInC = 40.0",NORMAL,Validates correct normal range.
+ClassifiesBreachForMedActiveCoolingLowTemperature,Test classification for low temperature in medium active cooling.,"coolingType = MED_ACTIVE_COOLING, temperatureInC = -1.0",TOO_LOW,Validates low temperature handling.
+ClassifiesBreachForMedActiveCoolingHighTemperature,Verify classification for high temperature in medium active cooling.,"coolingType = MED_ACTIVE_COOLING, temperatureInC = 41.0",TOO_HIGH,Checks upper limit for medium cooling.
+ClassifiesBreachForMedActiveCoolingNormalTemperature,Ensure normal classification for medium active cooling.,"coolingType = MED_ACTIVE_COOLING, temperatureInC = 39.0",NORMAL,Validates correct identification of normal range.
+SendingTheBreachToController,Test sendToController for various breach types.,"breachType = TOO_HIGH, breachType = NORMAL, breachType = TOO_LOW",Output matches expectations,Ensure correct formatted output.
+SendingTheBreachToEmail,Test sendToEmail for various breach types.,"breachType = TOO_HIGH, breachType = NORMAL, breachType = TOO_LOW",Output matches expectations,Check relevant messages sent.
+checkAndAlert,Verify checkAndAlert correctly calls alert methods.,"batteryCharPassive = {PASSIVE_COOLING, ""BrandA""}, temperatureInC = 30, alertTarget = TO_CONTROLLER",Correct alerts sent,Validate behavior under different conditions.
+,,"batteryCharActive = {HI_ACTIVE_COOLING, ""BrandB""}, temperatureInC = 45, alertTarget = TO_EMAIL",,
+,,"batteryCharMed = {MED_ACTIVE_COOLING, ""BrandC""}, temperatureInC = 35, alertTarget = TO_CONTROLLER",,
