@@ -68,3 +68,9 @@ TEST(TypeWiseAlertTestSuite, SendingTheBreachToEmail) {
     sendToEmail(NORMAL);
     sendToEmail(TOO_LOW);
 }
+
+TEST(TypeWiseAlertTestSuite, checkAndAlert) {
+    checkAndAlert(TO_CONTROLLER,PASSIVE_COOLING,30);
+    checkAndAlert(TO_EMAIL,HI_ACTIVE_COOLING,45);
+    checkAndAlert(TO_CONTROLLER,MED_ACTIVE_COOLING,35);
+}
