@@ -12,21 +12,23 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   return NORMAL;
   }
 }
-void TempLimit(CoolingType coolingType){
-  int Limit;
- if (coolingType == PASSIVE_COOLING) {
-        Limit = 35;
-    } else if (coolingType == HI_ACTIVE_COOLING) {
-        Limit = 45;
-    } else {
-        Limit = 40; // MED_ACTIVE_COOLING and default case
-    }
-  return Limit;
-}
 
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
-  int upperLimit = TempLimit(coolingType);
+  int upperLimit = 0;
+  switch(coolingType) {
+    case PASSIVE_COOLING:
+      lowerLimit = 0;
+      upperLimit = 35;
+      break;
+    case HI_ACTIVE_COOLING:
+      lowerLimit = 0;
+      upperLimit = 45;
+      break;
+    case MED_ACTIVE_COOLING:
+      lowerLimit = 0;
+      upperLimit = 40;
+      break;
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
@@ -61,7 +63,6 @@ void sendAlert(AlertTarget alertTarget, BreachType breachType) {
     }
 }
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
-
   BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
   sendAlert(alertTarget, breachType);
  }
