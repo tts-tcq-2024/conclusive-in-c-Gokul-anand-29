@@ -30,6 +30,7 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
       upperLimit = 40;
       break;
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
+    }
 }
 
 void sendToController(BreachType breachType) {
